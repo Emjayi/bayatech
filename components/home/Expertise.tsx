@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Expertise() {
   return (
-    <div id="about">
+    <div>
       <div className="bg-[#E8F4F8] ">
         <div className="flex gap-8 items-center justify-between">
           {/* Left Side - Image */}

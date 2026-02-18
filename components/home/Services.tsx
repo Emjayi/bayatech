@@ -32,7 +32,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="bg-[#EDFBFD] py-16 md:py-24">
+    <section id="products" className="bg-[#EDFBFD] py-16 md:py-24">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-5xl font-bold text-[#1E3A5F] text-center mb-12">
           چطور میتونیم کمکت کنیم؟

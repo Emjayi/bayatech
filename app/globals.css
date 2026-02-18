@@ -92,6 +92,21 @@
   text-align: right;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem; /* navbar height + breathing room */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+:where(section, div)[id] {
+  scroll-margin-top: 4.5rem; /* ensure anchor targets aren't hidden */
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);

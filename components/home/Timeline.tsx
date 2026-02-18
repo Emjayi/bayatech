@@ -58,7 +58,7 @@ export default function Timeline() {
 ];
 
 return (
-    <section className="bg-[#E8F4F8] py-16 md:py-24">
+    <section id="about" className="bg-[#E8F4F8] py-16 md:py-24">
       <div className=" px-4">
         <h2 className="text-3xl md:text-5xl font-bold text-gray-700 text-center mb-12">
           Time Line
