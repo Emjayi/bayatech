@@ -18,7 +18,6 @@ export default function Customers() {
     { name: "Customer 10", logo: "logo (10)" },
     { name: "Customer 11", logo: "logo (11)" },
     { name: "Customer 12", logo: "logo (12)" },
-    { name: "Customer 13", logo: "logo (13)" },
   ];
 
   return (
@@ -27,7 +26,7 @@ export default function Customers() {
         <h2 className="text-3xl md:text-5xl font-bold text-black text-center mb-12" dir="rtl">
           مشتریان ما
         </h2>
-        <div className="flex flex-wrap justify-center gap-8 items-center">
+        <div className="grid grid-cols-3 md:grid-cols-6 justify-center gap-8 items-center">
           {customers.map((customer, index) => (
             <motion.div
               key={index}

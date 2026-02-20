@@ -17,9 +17,20 @@ export default function Header() {
           <a href="#contact" className="hover:text-[#1E3A5F] transition-colors">
             تماس با ما
           </a>
-          <a href="#about" className="hover:text-[#1E3A5F] transition-colors">
-            درباره ما
-          </a>
+          <a
+              href="#about-bayatech"
+              className="hover:text-[#1E3A5F] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              درباره ما
+            </a>
+            <a
+              href="#about"
+              className="hover:text-[#1E3A5F] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              تایم لاین
+            </a>
           <a href="#products" className="hover:text-[#1E3A5F] transition-colors">
             محصولات
           </a>
@@ -60,11 +71,18 @@ export default function Header() {
               محصولات
             </a>
             <a
-              href="#about"
+              href="#about-bayatech"
               className="hover:text-[#1E3A5F] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               درباره ما
+            </a>
+            <a
+              href="#about"
+              className="hover:text-[#1E3A5F] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              تایم لاین
             </a>
             <a
               href="#contact"

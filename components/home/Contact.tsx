@@ -15,7 +15,7 @@ export default function Contact() {
         </svg>
       ),
       title: "Whatsapp",
-      details: ["+989159000075", "@bayatech"],
+      details: ["+989056125856"],
     },
     {
       icon: (
@@ -40,7 +40,7 @@ export default function Contact() {
         </svg>
       ),
       title: "Location",
-      details: ["Factory Mashad - Azadi 69", "Office Mashad - Moalem23"],
+      details: ["مشهد، بزرگراه پیامبر اعظم، نبش پیامبر اعظم ۷۳/۶، کارخانه بایاتک", "Office Mashad - Moalem23"],
     },
     {
       icon: (
@@ -76,9 +76,35 @@ export default function Contact() {
         </svg>
       ),
       title: "Telegram",
-      details: ["+989159000075", "@bayatech"],
+      details: ["+989150901684", "@bayatech"],
     },
   ];
+
+  const getHref = (title: string, detail: string): string | null => {
+    const trimmed = detail.trim();
+
+    // Extract a phone number like +989159000075 from strings like "Sales office +989159000075"
+    const phoneMatch = trimmed.match(/\+\d{6,15}/);
+    const phone = phoneMatch?.[0] ?? null;
+
+    if (title === "Telephone" && phone) {
+      return `tel:${phone}`;
+    }
+
+    if (title === "Whatsapp") {
+      // Prefer phone-based WhatsApp deep link
+      if (phone) return `https://wa.me/${phone.replace("+", "")}`;
+      return null;
+    }
+
+    if (title === "Telegram") {
+      // Prefer username-based Telegram link: "@bayatech" -> "bayatech"
+      if (trimmed.startsWith("@")) return `https://t.me/${trimmed.slice(1)}`;
+      return null;
+    }
+
+    return null;
+  };
 
   return (
     <section id="contact" className="bg-[#1E3A5F] py-16 md:py-24 relative z-50">
@@ -104,11 +130,31 @@ export default function Contact() {
                 {info.title}
               </h3>
               <div className="space-y-2">
-                {info.details.map((detail, idx) => (
-                  <p key={idx} className="text-white text-sm">
-                    {detail}
-                  </p>
-                ))}
+                {info.details.map((detail, idx) => {
+                  const href = getHref(info.title, detail);
+                  if (!href) {
+                    return (
+                      <p key={idx} className="text-white text-sm">
+                        {detail}
+                      </p>
+                    );
+                  }
+
+                  const isExternal =
+                    href.startsWith("http://") || href.startsWith("https://");
+
+                  return (
+                    <a
+                      key={idx}
+                      href={href}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noreferrer noopener" : undefined}
+                      className="block text-white text-sm hover:underline underline-offset-4"
+                    >
+                      {detail}
+                    </a>
+                  );
+                })}
               </div>
             </motion.div>
           ))}

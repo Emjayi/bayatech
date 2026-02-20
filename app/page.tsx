@@ -6,6 +6,7 @@ import Timeline from "@/components/home/Timeline";
 import ElevatorButton from "@/components/home/ElevatorButton";
 import Contact from "@/components/home/Contact";
 import Customers from "@/components/home/Customers";
+import AboutBayatech from "@/components/home/AboutBayatech";
 import ElevatorLoading from "@/components/home/paralax_eleveator";
 import FadeInUp from "@/components/home/FadeInUp";
 
@@ -34,6 +35,7 @@ export default function Page() {
           <ElevatorButton />
         </FadeInUp>
         <Contact />
+        <AboutBayatech />
         <Customers />
       </div>
     </div>
