@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,21 +10,20 @@ export default function Header() {
   return (
     <header className="bg-[#EDFBFD] w-full">
       {/* Navigation Bar */}
-      <nav className="bg-white h-16 w-full px-4 py-4 flex justify-end items-center">
+      <nav className="bg-white h-16 w-full px-4 py-4 flex justify-start items-center">
         <div className="hidden md:flex gap-6 text-sm font-medium">
-          <a href="#customers" className="hover:text-[#1E3A5F] transition-colors">
-            مشتریان ما
+          <a href="#products" className="hover:text-[#1E3A5F] transition-colors">
+            دسته بندی
           </a>
-          <a href="#contact" className="hover:text-[#1E3A5F] transition-colors">
-            تماس با ما
+          <a href="#products" className="hover:text-[#1E3A5F] transition-colors">
+            محصولات
           </a>
-          <a
-              href="#about-bayatech"
+          <Link
+              href="/about"
               className="hover:text-[#1E3A5F] transition-colors"
-              onClick={() => setIsMenuOpen(false)}
             >
               درباره ما
-            </a>
+          </Link>
             <a
               href="#about"
               className="hover:text-[#1E3A5F] transition-colors"
@@ -31,11 +31,11 @@ export default function Header() {
             >
               تایم لاین
             </a>
-          <a href="#products" className="hover:text-[#1E3A5F] transition-colors">
-            محصولات
+          <a href="#contact" className="hover:text-[#1E3A5F] transition-colors">
+            تماس با ما
           </a>
-          <a href="#products" className="hover:text-[#1E3A5F] transition-colors">
-            دسته بندی
+          <a href="#customers" className="hover:text-[#1E3A5F] transition-colors">
+            مشتریان ما
           </a>
         </div>
         <button

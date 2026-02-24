@@ -35,7 +35,6 @@ export default function Page() {
           <ElevatorButton />
         </FadeInUp>
         <Contact />
-        <AboutBayatech />
         <Customers />
       </div>
     </div>
