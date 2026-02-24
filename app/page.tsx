@@ -12,7 +12,7 @@ import FadeInUp from "@/components/home/FadeInUp";
 
 export default function Page() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" dir="ltr">
       {/* Elevator overlays the page but will fade in after the hero via scrollYProgress */}
       <ElevatorLoading />
       <FadeInUp>
