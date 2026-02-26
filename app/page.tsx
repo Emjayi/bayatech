@@ -15,10 +15,7 @@ export default function Page() {
     <div className="min-h-screen" dir="ltr">
       {/* Elevator overlays the page but will fade in after the hero via scrollYProgress */}
       <ElevatorLoading />
-      <FadeInUp>
-        <Header />
-      </FadeInUp>
-      <FadeInUp delay={0.1}>
+      <FadeInUp delay={0.5}>
         <Hero />
       </FadeInUp>
       <FadeInUp delay={0.2}>

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Expertise() {
   return (
     <div>
-      <div className="bg-[#E8F4F8] ">
+      <div className="bg-[#EFFAFE]  pr-20">
         <div className="flex gap-8 items-center justify-between">
           {/* Left Side - Image */}
           <motion.div
@@ -43,7 +43,8 @@ export default function Expertise() {
           </motion.div>
         </div>
       </div>
-      <div className="bg-[#D9D9D9]">
+      <div className="bg-[#EFFAFE]">
+      <div className="bg-[#E68626] rounded-bl-[150px] pl-20">
         <div className="flex gap-8 items-center justify-between">
           {/* Left Side - Image */}
           <motion.div
@@ -57,7 +58,7 @@ export default function Expertise() {
             className="space-y-6"
           >
             {/* English Text */}
-            <p className="text-gray-700 leading-relaxed text-right">
+            <p className="text-white leading-relaxed text-right">
             ،شرکت بایاتک با  استفاده از قطعات درجه یک و برندهای معتبر در آسانسور
 <br/>.ایمنی، دوام و عملکردی بی‌نقص را برای پروژه‌های خود تضمین می‌کند
 <br/>.کیفیت بالا، انتخاب آگاهانه قطعات و تعهد به رضایت مشتری، اساس کار بایاتک است
@@ -73,10 +74,11 @@ export default function Expertise() {
               ease: [0.25, 0.1, 0.25, 1],
               delay: 0.2,
             }}
-          >
+            >
             <Image alt="expertise" src="/home/el-button.png" width={480} height={480} />
           </motion.div>
         </div>
+            </div>
       </div>
     </div>
   );

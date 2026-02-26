@@ -9,13 +9,13 @@ export default function Header() {
   return (
     <header className="bg-[#EDFBFD] w-full">
       {/* Navigation Bar */}
-      <nav className="bg-white h-16 w-full px-4 py-4 flex justify-end items-center">
+      <nav className="bg-white border shadow-md h-16 w-full px-4 py-4 flex justify-end items-center">
         <div className="hidden md:flex gap-6 text-sm font-medium">
-          <a href="#customers" className="hover:text-[#1E3A5F] transition-colors">
-            مشتریان ما
-          </a>
           <Link href="/contact-us" className="hover:text-[#1E3A5F] transition-colors">
             تماس با ما
+          </Link>
+          <Link href="#" className="hover:text-[#1E3A5F] transition-colors">
+            مقالات
           </Link>
           <Link
               href="/about"
@@ -23,18 +23,14 @@ export default function Header() {
             >
               درباره ما
             </Link>
-            <a
-              href="#about"
-              className="hover:text-[#1E3A5F] transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              تایم لاین
-            </a>
           <a href="#products" className="hover:text-[#1E3A5F] transition-colors">
             محصولات
           </a>
           <a href="#products" className="hover:text-[#1E3A5F] transition-colors">
-            دسته بندی
+            خدمات ما
+          </a>
+          <a href="/" className="hover:text-[#1E3A5F] transition-colors">
+            صفحه اصلی
           </a>
         </div>
         <button

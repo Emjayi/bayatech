@@ -6,6 +6,13 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 750" width="34" height="34" fill="currentColor"><path  d="M695 1q20 0 33 13t13 33v464q0 19-13 32t-33 14H46q-19 0-32-14T0 511V47q0-19 14-33T46 1zm-53 97q2-1 2-3t-3-1H101q-2 0-3 1t1 3l259 172q13 10 25 0z"/></svg>
+      ),
+      title: "Email",
+      details: ["email@mail.com"],
+    },
+    {
+      icon: (
         <svg
           className="w-8 h-8"
           fill="currentColor"
@@ -40,7 +47,7 @@ export default function Contact() {
         </svg>
       ),
       title: "Location",
-      details: ["مشهد، بزرگراه پیامبر اعظم، نبش پیامبر اعظم ۷۳/۶، کارخانه بایاتک", "Office Mashad - Moalem23"],
+      details: ["مشهد، بزرگراه پیامبر اعظم، نبش پیامبر اعظم ۷۳/۶، کارخانه بایاتک",],
     },
     {
       icon: (
@@ -99,8 +106,18 @@ export default function Contact() {
 
     if (title === "Telegram") {
       // Prefer username-based Telegram link: "@bayatech" -> "bayatech"
+      if (phone) return `https://t.me/${phone}`
       if (trimmed.startsWith("@")) return `https://t.me/${trimmed.slice(1)}`;
       return null;
+    }
+    if (title === "Email") {
+      // Prefer username-based Telegram link: "@bayatech" -> "bayatech"
+      return `mailto:email@mail.com`
+      return null;
+    }
+    if (title === "Location") {
+      // Prefer username-based Telegram link: "@bayatech" -> "bayatech"
+      return `https://neshan.org/maps/places/945ef2102ae55f8b9b3493b76724c5e0#c36.392-59.513-20z-0p`;
     }
 
     return null;
@@ -109,7 +126,7 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-[#1E3A5F] py-16 md:py-24 relative z-50">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {contactInfo.map((info, index) => (
             <motion.div
               key={index}

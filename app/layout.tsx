@@ -2,6 +2,8 @@ import localFont from 'next/font/local'
  import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from '@/components/home/Header';
+import FadeInUp from '@/components/home/FadeInUp';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,10 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir='rtl'>
+    <html lang="fa" >
       <body
         className={`${yekanBakh.className} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
